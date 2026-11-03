@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Design System</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/lists.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/kanban.css">
+    <link rel="stylesheet" href="css/spinner.css">
+    <style>
+        body { padding: 20px; }
+        .configurator { background: #fff; padding: 16px; border-radius: 6px; margin-bottom: 24px; display: flex; gap: 16px; align-items: center; border: 1px solid var(--ds-border); }
+        .header-title { margin-top: 0; margin-bottom: 24px; font-size: 24px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <h1 class="header-title">Universal Design System Showcase</h1>
+    
+    <div class="configurator">
+        <label><b>Tema Warna Utama:</b></label>
+        <input type="color" id="themeColorPicker" value="#0052cc">
+        <small style="color: var(--ds-secondary-text);">Ubah warna ini untuk merender ulang seluruh komponen secara instan.</small>
+    </div>
+
+    <div class="ds-dashboard">
+        <div class="ds-card">
+            <div class="ds-card-title">Total Entitas Data</div>
+            <div class="ds-card-value">1,204</div>
+        </div>
+        <div class="ds-card">
+            <div class="ds-card-title">Panel Aksi Utama</div>
+            <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+                <button class="ds-btn ds-btn-primary" onclick="openModal('modal1')">Buka Nested Modal</button>
+                <button class="ds-btn ds-btn-secondary" onclick="openModal('modalList')">Lihat List Record</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nested Modals (Generic Context) -->
+    <div id="modal1" class="ds-modal-backdrop ds-modal-layer-1" style="display: none;">
+        <div class="ds-modal-content">
+            <div class="ds-modal-header">Konfirmasi Tindakan</div>
+            <div class="ds-modal-body">Apakah Anda yakin ingin memproses data ini secara massal? Tindakan ini akan memicu pembaruan pada sistem.</div>
+            <div class="ds-modal-footer">
+                <button class="ds-btn ds-btn-secondary" onclick="closeModal('modal1')">Batal</button>
+                <button class="ds-btn ds-btn-primary" onclick="openModal('modal2')">Lanjutkan Proses</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="ds-modal-backdrop ds-modal-layer-2" style="display: none;">
+        <div class="ds-modal-content">
+            <div id="modal2-spinner" class="ds-spinner-overlay" style="display: none;">
+                <div class="ds-spinner"><div class="ds-spinner-dot-a"></div><div class="ds-spinner-dot-b"></div></div>
+            </div>
+            <div class="ds-modal-header">Verifikasi Akhir</div>
+            <div class="ds-modal-body">Pastikan kembali data sudah benar. Aksi ini tidak dapat dibatalkan setelah dieksekusi.</div>
+            <div class="ds-modal-footer">
+                <button class="ds-btn ds-btn-secondary" onclick="closeModal('modal2')">Kembali</button>
+                <button class="ds-btn ds-btn-action" id="btnSave" onclick="saveAndLoad()">Eksekusi Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal with List (Generic Context) -->
+    <div id="modalList" class="ds-modal-backdrop ds-modal-layer-1" style="display: none;">
+        <div class="ds-modal-content" style="max-height: 80vh;">
+            <div class="ds-modal-header">Daftar Record / Entitas</div>
+            <div class="ds-modal-body">
+                <ul class="ds-record-list">
+                    <li class="ds-record-item">
+                        <div>
+                            <div class="ds-record-title">John Doe</div>
+                            <div class="ds-record-meta">ID: 001 • Administrator</div>
+                        </div>
+                        <button class="ds-btn ds-btn-secondary">Lihat Detail</button>
+                    </li>
+                    <li class="ds-record-item">
+                        <div>
+                            <div class="ds-record-title">Jane Smith</div>
+                            <div class="ds-record-meta">ID: 002 • Standard User</div>
+                        </div>
+                        <button class="ds-btn ds-btn-secondary">Lihat Detail</button>
+                    </li>
+                    <li class="ds-record-item">
+                        <div>
+                            <div class="ds-record-title">Acme Corp.</div>
+                            <div class="ds-record-meta">ID: 003 • Enterprise Client</div>
+                        </div>
+                        <button class="ds-btn ds-btn-secondary">Lihat Detail</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="ds-modal-footer">
+                <button class="ds-btn ds-btn-primary" onclick="closeModal('modalList')">Tutup Jendela</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

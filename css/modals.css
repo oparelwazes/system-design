@@ -1,0 +1,19 @@
+
+.ds-modal-backdrop {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(9, 30, 66, 0.54);
+  display: flex; align-items: center; justify-content: center;
+}
+.ds-modal-layer-1 { z-index: 9999; }
+.ds-modal-layer-2 { z-index: 10000; background: rgba(9, 30, 66, 0.7); }
+
+.ds-modal-content {
+  position: relative;
+  background: var(--ds-bg-main); border-radius: var(--ds-radius-lg);
+  width: 100%; max-width: 500px; max-height: 90vh;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  display: flex; flex-direction: column;
+}
+.ds-modal-header { padding: var(--ds-spacing-md) var(--ds-spacing-lg); border-bottom: 1px solid var(--ds-border); font-weight: 600; font-size: 18px; }
+.ds-modal-body { padding: var(--ds-spacing-lg); overflow-y: auto; }
+.ds-modal-footer { padding: var(--ds-spacing-md) var(--ds-spacing-lg); border-top: 1px solid var(--ds-border); display: flex; justify-content: flex-end; gap: var(--ds-spacing-sm); }

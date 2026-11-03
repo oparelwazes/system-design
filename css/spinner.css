@@ -1,0 +1,7 @@
+
+.ds-spinner-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.75); display: flex; justify-content: center; align-items: center; z-index: 9000; border-radius: inherit; }
+.ds-spinner { width: 40px; height: 40px; position: relative; animation: ds-spinner-rotate 2s linear infinite; }
+.ds-spinner-dot-a, .ds-spinner-dot-b { width: 60%; height: 60%; display: inline-block; position: absolute; top: 0; background-color: var(--ds-primary); border-radius: 100%; animation: ds-spinner-bounce 2s ease-in-out infinite; }
+.ds-spinner-dot-b { top: auto; bottom: 0; animation-delay: -1s; }
+@keyframes ds-spinner-rotate { 100% { transform: rotate(360deg); } }
+@keyframes ds-spinner-bounce { 0%, 100% { transform: scale(0); } 50% { transform: scale(1); } }

@@ -1,0 +1,30 @@
+
+:root {
+  /* Brand Colors - Ubah nilainya di sini untuk merubah seluruh sistem */
+  --ds-primary: #0052cc;
+  --ds-primary-hover: color-mix(in srgb, var(--ds-primary) 80%, black);
+  --ds-secondary: #f4f5f7;
+  --ds-secondary-text: #42526e;
+  --ds-action: #00875a; 
+  --ds-danger: #de350b;
+
+  /* Backgrounds & Borders */
+  --ds-bg-main: #ffffff;
+  --ds-bg-app: #f4f5f7;
+  --ds-border: #dfe1e6;
+
+  /* Typography */
+  --ds-text-main: #172b4d;
+  --ds-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing & Radii */
+  --ds-radius: 6px;
+  --ds-radius-lg: 12px;
+  --ds-spacing-sm: 8px;
+  --ds-spacing-md: 16px;
+  --ds-spacing-lg: 24px;
+}
+
+/* Global Reset Basic */
+* { box-sizing: border-box; font-family: var(--ds-font-family); color: var(--ds-text-main); }
+body { background-color: var(--ds-bg-app); margin: 0; }

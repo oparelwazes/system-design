@@ -1,0 +1,5 @@
+
+.ds-dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--ds-spacing-lg); padding: var(--ds-spacing-lg); }
+.ds-card { background: var(--ds-bg-main); border: 1px solid var(--ds-border); border-radius: var(--ds-radius); padding: var(--ds-spacing-lg); display: flex; flex-direction: column; }
+.ds-card-title { font-size: 14px; color: var(--ds-secondary-text); text-transform: uppercase; letter-spacing: 0.5px; }
+.ds-card-value { font-size: 32px; font-weight: 700; margin-top: 8px; color: var(--ds-primary); }

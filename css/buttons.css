@@ -1,0 +1,13 @@
+
+.ds-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 8px 16px; border-radius: var(--ds-radius); font-size: 14px;
+  font-weight: 600; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.ds-btn:active { transform: scale(0.98); }
+.ds-btn-primary { background: var(--ds-primary); color: #fff; }
+.ds-btn-primary:hover { background: var(--ds-primary-hover); }
+.ds-btn-secondary { background: var(--ds-secondary); color: var(--ds-secondary-text); border: 1px solid var(--ds-border); }
+.ds-btn-secondary:hover { background: #ebecf0; }
+.ds-btn-action { background: var(--ds-action); color: #fff; box-shadow: 0 4px 6px rgba(0,135,90,0.2); }
